@@ -8,11 +8,11 @@ class Solution:
         if n>1:
             List = Solution.generateParenthesis(n-1,n-1)
             list = []
+            len = n*2-2
             for str in List:
-                str = '('+str
-                for i in range(1,n*2-1):
-                    print(i)
-                    strNew = str[0:i]+')'+str[i:(n*2-1)]
+                #str = '('+str
+                for i in range(0,len):
+                    strNew = '('+str[0:i]+')'+str[i:len]
                     if list.count(strNew) == 0:
                         list.append(strNew)
             return list
